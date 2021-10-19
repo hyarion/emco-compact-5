@@ -1,0 +1,53 @@
+
+Plug male
+ 1 2
+x x x
+6 x 8
+
+purpl   1 count, needs a 8k pullup (8K2
+gray    2 index, needs a 18k pullup
+black   6 gnd
+white   8 vcc, should be connected through 68 ohm in series (to limit the current through the LEDs)
+
+
+TB3 on 7i76e
+
+TB3:12 -+- 68OR -- X6:8 VCC
+        +-  8K  -- X6:1 count
+        +- 18K  -- X6:2 index
+
+TB3:7  -- X6:1 count
+TB3:13 -- X6:2 index
+TB3:9  -- X6:6 GND
+
+
+
+
+Controller side
+
+gnd   idx   +5v   cnt
+      out         out
+ |     |     |     |
+ |     |  +--+--+  |
+ |     |  |  |  |  |
+ |     | | | | | | |
+ |     | |1| | | | |
+ |     | |8| | |8| |
+ |     | |k| | |k| |
+ |     | | | | | | |
+ |     |  |  |  |  |
+ |     +--+  |  +--|
+ |     |     |     |
+ |     |    | |    | 
+ |     |    |6|    | 
+ |     |    |8|    | 
+ |     |    | |    | 
+ |     |     |     |
+ |     |     |     |
+gnd   idx   vcc   cnt
+      in          in
+
+Sensor/Lathe side
+
+
+
